@@ -16,7 +16,7 @@
             position: absolute;
         }
 
-        /*@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');*/
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
         :root {
             --primary-color: #121212;
@@ -76,7 +76,7 @@
             max-width: 800px;
             margin: auto;
             overflow: hidden;
-            padding: 0 20px;
+            padding: 0 15px;
         }
 
         header {
@@ -88,16 +88,9 @@
             gap: 2em;
         }
 
-        /*.merienda {
-          font-family: "Merienda", cursive;
-          font-optical-sizing: auto;
-          font-weight: <weight>;
-          font-style: normal;
-        }*/
-
         h1 {
             font-family: "Merienda", cursive;
-            font-size: 3rem;
+            font-size: 2.5rem;
             line-height: 1em;
             margin: 0;
             color: var(--accent-color);
@@ -107,7 +100,7 @@
         h2 {
             font-family: "Merienda", cursive;
             font-family: "Merienda", cursive;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             color: #ccc; /* Lighter than body text for contrast */
             filter: url(#waves);
         }
@@ -155,13 +148,13 @@
 
         .timeline {
             position: relative;
-            padding-left: 50px;
+            padding-left: 30px;
         }
 
         .timeline::before {
             content: '';
             position: absolute;
-            left: 20px;
+            left: 10px;
             top: 0;
             bottom: 0;
             width: 2px;
@@ -176,31 +169,13 @@
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -39px;
+            left: -29px;
             top: 5px;
             width: 15px;
             height: 15px;
             border-radius: 50%;
             background: var(--accent-color);
             border: 2px solid var(--primary-color);
-        }
-
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 2.5rem;
-            }
-            header h2 {
-                font-size: 1.2rem;
-            }
-            .container {
-                padding: 0 15px;
-            }
-            .timeline {
-                padding-left: 30px;
-            }
-            .timeline-item::before {
-                left: -29px;
-            }
         }
 
         .card {
@@ -300,8 +275,7 @@
     <header class="hidden">
         <h1>Amber Huang</h1>
         <h1>⻩超倩</h1>
-        <!--<img src="amber.png" alt="Profile Picture" class="profile-pic">-->
-        <img src="profile.png" alt="Profile Picture" class="profile-pic">
+        <img src="amber.png" alt="Profile Picture" class="profile-pic">
         <div>
             Business Management at
             <br/>
