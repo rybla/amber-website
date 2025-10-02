@@ -9,7 +9,7 @@
           scroll-behavior: smooth;
         }
 
-        svg {
+        svg#filter {
             position: absolute;
         }
 
@@ -155,12 +155,6 @@
             margin-bottom: 1rem;
         }
 
-        .section-icon {
-            width: 40px;
-            height: 40px;
-            margin-right: 1rem;
-        }
-
         .timeline {
             position: relative;
             padding-left: 50px;
@@ -255,7 +249,7 @@
     </style>
 </head>
 <body>
-    <svg>
+    <svg id="filter">
         <defs>
             <filter id="distort">
                 <feTurbulence baseFrequency="0.01 0.01" numOctaves="1" result="noise"  />
@@ -274,8 +268,7 @@
     <main>
         <section id="profile" class="hidden">
             <div class="section-header">
-                <img src="star.svg" class="section-icon" alt="icon">
-                <h2><a href="#profile">Profile</a></h2>
+                <h2>🔶 <a href="#profile">Profile</a></h2>
             </div>
             <img src="profile.png" alt="Profile Picture" class="profile-pic">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -283,16 +276,14 @@
 
         <section id="current-role" class="hidden">
             <div class="section-header">
-                <img src="star.svg" class="section-icon" alt="icon">
-                <h2><a href="#current-role">Current Role</a></h2>
+                <h2>🔶 <a href="#current-role">Current Role</a></h2>
             </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </section>
 
         <section id="previous-experiences" class="hidden">
             <div class="section-header">
-                <img src="star.svg" class="section-icon" alt="icon">
-                <h2><a href="#previous-experiences">Previous Experiences</a></h2>
+                <h2>🔶 <a href="#previous-experiences">Previous Experiences</a></h2>
             </div>
             <div class="timeline">
                 <div class="timeline-item card">
@@ -310,8 +301,7 @@
 
         <section id="personal-interests" class="hidden">
             <div class="section-header">
-                <img src="star.svg" class="section-icon" alt="icon">
-                <h2><a href="#personal-interests">Personal Interests</a></h2>
+                <h2>🔶 <a href="#personal-interests">Personal Interests</a></h2>
             </div>
             <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </section>
