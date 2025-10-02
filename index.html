@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Resume</title>
+    <title>Amber Huang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
     <style>
         html {
           scroll-behavior: smooth;
@@ -13,7 +16,7 @@
             position: absolute;
         }
 
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+        /*@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');*/
 
         :root {
             --primary-color: #121212;
@@ -81,20 +84,32 @@
             padding: 4rem 0;
             display: flex;
             flex-direction: column;
+            align-items: center;
             gap: 2em;
         }
 
-        header h1 {
+        /*.merienda {
+          font-family: "Merienda", cursive;
+          font-optical-sizing: auto;
+          font-weight: <weight>;
+          font-style: normal;
+        }*/
+
+        h1 {
+            font-family: "Merienda", cursive;
             font-size: 3rem;
+            line-height: 1em;
             margin: 0;
             color: var(--accent-color);
-            filter: url(#distort);
+            filter: url(#waves);
         }
 
-        header h2 {
+        h2 {
+            font-family: "Merienda", cursive;
+            font-family: "Merienda", cursive;
             font-size: 1.5rem;
-            font-weight: 300;
             color: #ccc; /* Lighter than body text for contrast */
+            filter: url(#waves);
         }
 
         main section {
@@ -115,22 +130,7 @@
             padding-bottom: 0.5rem;
         }
 
-        h2::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 3px;
-            background-color: var(--accent-color);
-            transition: width 0.3s ease;
-        }
-
-        h2:hover::after {
-            width: 100%;
-        }
-
-        #profile {
+        #into {
             text-align: center;
         }
 
@@ -138,15 +138,13 @@
             width: 300px;
             height: 300px;
             border-radius: 40%;
-            border: 3px solid var(--accent-color);
             margin-bottom: 1rem;
-            animation: pulse 2s infinite;
+            animation: pulse 4s infinite;
             transition: transform 0.3s ease;
         }
 
         .profile-pic:hover {
             transform: scale(1.05) rotate(-5deg);
-            animation-play-state: paused;
         }
 
         .section-header {
@@ -219,36 +217,41 @@
             box-shadow: 0 8px 16px rgba(0,0,0,0.3);
         }
 
-        #links ul {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            padding-left: 0;
-            justify-content: center;
+        .inline-link-icon {
+          height: 1em;
+          display: inline-block;
+          border-radius: 0.5em;
+          margin-bottom: -0.1em;
         }
 
-        #links li {
-            list-style: none;
-            margin-bottom: 0;
+        .links {
+          padding: 0 1em;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 1em;
         }
 
-        #links li::before {
-            content: none;
+        .link-icon-wrapper {
+          display: block;
+          padding: 0.5em;
+          border-radius: 1em;
+
+          background-image: linear-gradient(to top, var(--accent-color), var(--primary-color) 90%);
+          background-size: auto 200%;
+          background-position: center top;
+          transition: background-position 0.2s ease-in-out;
         }
 
-        #links a {
-            display: block;
-            padding: 0.8rem 1.5rem;
-            background: var(--card-bg);
-            border-radius: 25px;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-            border: 1px solid var(--border-color);
+        .link-icon-wrapper:hover {
+          background-position: center bottom;
         }
 
-        #links a:hover {
-            transform: translateY(-5px) scale(1.05);
-            background-color: var(--accent-color);
-            color: var(--primary-color);
+        .link-icon {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
         }
 
         footer {
@@ -263,7 +266,7 @@
                 box-shadow: 0 0 0 0px var(--accent-color);
             }
             100% {
-                box-shadow: 0 0 20px 10px transparent;
+                box-shadow: 0 0 60px 60px transparent;
             }
         }
 
@@ -285,48 +288,51 @@
         <defs>
             <filter id="distort">
                 <feTurbulence baseFrequency="0.01 0.01" numOctaves="1" result="noise"  />
-                <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" xChannelSelector="R" yChannelSelector="R" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="30" xChannelSelector="R" yChannelSelector="G" />
+            </filter>
+            <filter id="waves" color-interpolation-filters="linearRGB" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse">
+             	<feTurbulence type="turbulence" baseFrequency="0.01 0.05" numOctaves="1" seed="2" stitchTiles="noStitch" result="turbulence"/>
+             	<feDisplacementMap in="SourceGraphic" in2="turbulence" scale="5" xChannelSelector="G" yChannelSelector="A" result="displacementMap"/>
             </filter>
         </defs>
     </svg>
     <div class="container">
     <header class="hidden">
-        <div class="ornament">🔶</div>
-        <h1>[Name]</h1>
-        <div>Business Management at <br/> <a href="https://lightnodeventures.com">Light Node Ventures</a></div>
-        <div class="ornament">🔶</div>
+        <h1>Amber Huang</h1>
+        <h1>⻩超倩</h1>
+        <!--<img src="amber.png" alt="Profile Picture" class="profile-pic">-->
+        <img src="profile.png" alt="Profile Picture" class="profile-pic">
+        <div>
+            Business Management at
+            <br/>
+            <a href="https://lightnodeventures.com"><img src="lightnode.jpg" class="inline-link-icon"> Light Node Ventures</a>
+        </div>
+        <div class="links">
+          <a href="#"><span class="link-icon-wrapper"><img src="x.png" class="link-icon" alt="x"></span></a>
+          <a href="#"><span class="link-icon-wrapper"><img src="medium.png" class="link-icon" alt="medium"></span></a>
+          <a href="#"><span class="link-icon-wrapper"><img src="dune.png" class="link-icon" alt="dune"></span></a>
+          <a href="#"><span class="link-icon-wrapper"><img src="solana.png" class="link-icon" alt="solana"></span></a>
+        </div>
     </header>
 
     <main>
-        <section id="profile" class="hidden">
+        <section id="intro" class="hidden">
             <div class="section-header">
-                <h2>🔶 <a href="#profile">Profile</a></h2>
+                <h2>🔶 <a href="#intro">Intro</a></h2>
             </div>
-            <img src="profile.png" alt="Profile Picture" class="profile-pic">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </section>
 
-        <section id="links" class="hidden">
+        <section id="current" class="hidden">
             <div class="section-header">
-                <h2>🔶 <a href="#links">Links</a></h2>
-            </div>
-            <ul>
-                <li><a href="#">X/Twitter</a></li>
-                <li><a href="#">Medium</a></li>
-                <li><a href="#">LinkedIn</a></li>
-            </ul>
-        </section>
-
-        <section id="current-role" class="hidden">
-            <div class="section-header">
-                <h2>🔶 <a href="#current-role">Current Role</a></h2>
+                <h2>🔶 <a href="#current">Current</a></h2>
             </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </section>
 
-        <section id="previous-experiences" class="hidden">
+        <section id="history" class="hidden">
             <div class="section-header">
-                <h2>🔶 <a href="#previous-experiences">Previous Experiences</a></h2>
+                <h2>🔶 <a href="#history">History</a></h2>
             </div>
             <div class="timeline">
                 <div class="timeline-item card">
@@ -342,16 +348,16 @@
             </div>
         </section>
 
-        <section id="personal-interests" class="hidden">
+        <section id="interests" class="hidden">
             <div class="section-header">
-                <h2>🔶 <a href="#personal-interests">Personal Interests</a></h2>
+                <h2>🔶 <a href="#interests">Interests</a></h2>
             </div>
             <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </section>
     </main>
 
     <footer class="hidden">
-        <p>Contact: [Email] | [LinkedIn]</p>
+        <p>Contact: [Email] | [X]</p>
     </footer>
     </div>
     <script>
