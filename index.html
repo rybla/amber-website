@@ -219,6 +219,38 @@
             box-shadow: 0 8px 16px rgba(0,0,0,0.3);
         }
 
+        #links ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding-left: 0;
+            justify-content: center;
+        }
+
+        #links li {
+            list-style: none;
+            margin-bottom: 0;
+        }
+
+        #links li::before {
+            content: none;
+        }
+
+        #links a {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            background: var(--card-bg);
+            border-radius: 25px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        #links a:hover {
+            transform: translateY(-5px) scale(1.05);
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+
         footer {
             text-align: center;
             padding: 2rem 0;
