@@ -12,10 +12,13 @@
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
         :root {
-            --primary-color: #1a1a1a;
+            --primary-color: #1f2023;
             --secondary-color: #f0f0f0;
-            --accent-color: #00aaff;
+            --accent-color: #ffbf00;
             --card-bg: #2a2a2a;
+            --border-color: #444;
+            --shadow-color: rgba(0,0,0,0.2);
+            --shadow-hover-color: rgba(0,0,0,0.3);
         }
 
         body {
@@ -53,7 +56,7 @@
 
         main section {
             padding: 2rem 0;
-            border-bottom: 1px solid #444;
+            border-bottom: 1px solid var(--border-color);
         }
 
         main section:last-child {
@@ -170,13 +173,13 @@
             padding: 1.5rem;
             margin-bottom: 1rem;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 8px var(--shadow-color);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 16px var(--shadow-hover-color);
         }
 
         footer {
@@ -184,6 +187,48 @@
             padding: 2rem 0;
             margin-top: 2rem;
             font-size: 0.9rem;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+        }
+
+        strong {
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        em {
+            font-style: italic;
+            color: var(--accent-color);
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        li::before {
+            content: '➤';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
         }
 
         @keyframes pulse {
