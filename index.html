@@ -12,10 +12,13 @@
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
         :root {
-            --primary-color: #1a1a1a;
-            --secondary-color: #f0f0f0;
-            --accent-color: #00aaff;
-            --card-bg: #2a2a2a;
+            --primary-color: #1E1E1E;
+            --secondary-color: #F5F5F5;
+            --accent-color: #FFBF00;
+            --card-bg: #333333;
+            --border-color: #444444;
+            --shadow-color: rgba(0, 0, 0, 0.2);
+            --shadow-color-hover: rgba(0, 0, 0, 0.3);
         }
 
         body {
@@ -51,9 +54,22 @@
             font-weight: 300;
         }
 
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        strong, em {
+            color: var(--accent-color);
+        }
+
         main section {
             padding: 2rem 0;
-            border-bottom: 1px solid #444;
+            border-bottom: 1px solid var(--border-color);
         }
 
         main section:last-child {
@@ -147,6 +163,31 @@
             border: 2px solid var(--primary-color);
         }
 
+        .timeline-item h3 {
+            color: var(--accent-color);
+            margin-top: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
         @media (max-width: 600px) {
             header h1 {
                 font-size: 2.5rem;
@@ -170,13 +211,13 @@
             padding: 1.5rem;
             margin-bottom: 1rem;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 8px var(--shadow-color);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 16px var(--shadow-color-hover);
         }
 
         footer {
